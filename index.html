@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramadhan Imsakiyah · Semua Kota Indonesia</title>
+  <!-- Animate.css untuk animasi -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Link ke CSS terpisah -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle" id="darkModeToggle">
+      <span class="toggle-icon" id="toggleIcon">☀️</span>
+      <span class="toggle-text" id="toggleText">Mode Terang</span>
+    </div>
+
+    <h1>
+      <span>🌙</span> Jadwal Imsakiyah Seluruh Indonesia <span>🕌</span>
+    </h1>
+    <p>✓ 100+ kota · data realtime dari MyQuran · animasi interaktif</p>
+  </header>
+
+  <main>
+    <!-- Panel utama dengan search dan dropdown -->
+    <div class="picker-wrapper animate__animated animate__fadeInDown">
+      <div class="top-panel">
+        <div class="label-city">
+          <span>📍</span> Pilih Kota
+        </div>
+        
+        <!-- fitur pencarian kota -->
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="kotaSearch" placeholder="Cari kota/kabupaten..." autocomplete="off">
+        </div>
+        
+        <div class="total-kota" id="totalKotaDisplay">Memuat daftar kota...</div>
+      </div>
+      
+      <!-- dropdown yang akan diisi dinamis dengan semua kota -->
+      <div style="margin-top: 1.2rem;">
+        <select id="kotaSelect" size="1">
+          <option value="">⏳ Memuat daftar kota...</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Info lokasi terpilih -->
+    <div class="info-lokasi animate__animated animate__pulse animate__infinite" id="lokasiDisplay">Memilih kota...</div>
+
+    <div class="status-info">
+      <div class="live-badge">
+        <span class="pulse"></span> DATA LANGSUNG
+      </div>
+      <div class="last-update">
+        <span>🕒</span> Update: <span id="updateTime">—</span>
+      </div>
+    </div>
+
+    <!-- Panel pesan -->
+    <div class="message-panel" id="messagePanel"></div>
+
+    <!-- Tabel jadwal -->
+    <section class="table-wrapper">
+      <table id="jadwalTable">
+        <thead>
+          <tr>
+            <th>📅 Tanggal</th>
+            <th>🌙 Imsak</th>
+            <th>🕋 Subuh</th>
+            <th>☀️ Dzuhur</th>
+            <th>⛅ Ashar</th>
+            <th>🌅 Maghrib</th>
+            <th>✨ Isya</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr><td colspan="7" style="text-align:center; padding:3rem;">⏳ Pilih kota untuk melihat jadwal...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Catatan sumber data dengan warna yang bisa berubah di dark mode -->
+    <div class="data-source-note" id="dataSourceNote">
+      ✨ Data diambil langsung dari endpoint MyQuran v2 · tersedia >100 kota se-Indonesia
+    </div>
+  </main>
+
+  <footer>
+    <p>© 1447 H / 2026 M · Aplikasi Jadwal Imsakiyah Ramadhan · Semua kota Indonesia</p>
+    <p style="font-size:0.9rem;">powered by MyQuran API · dark mode tersedia · animasi interaktif</p>
+  </footer>
+
+  <!-- Link ke JavaScript terpisah -->
+  <script src="script.js"></script>
+</body>
+</html>
